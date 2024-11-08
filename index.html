@@ -3,7 +3,449 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="./assets/favicon.png" type="image/x-icon" />
+    <title>Developer</title>
   </head>
-  <body></body>
+  <body>
+    <canvas id="lines-demo"> </canvas>
+    <div
+      style="
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 1000px;
+        z-index: 5;
+      "
+      class="draggable"
+      class="ui-widget-content"
+    >
+      <nav class="navbar navbar-expand-lg bg-body-primary">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link text_light active"
+                  aria-current="page"
+                  href="#"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text_light" href="#">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text_light" href="#">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text_light" href="#">Contact me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div style="width: 80%; margin-top: 80px !important" class="m-auto">
+        <div class="horizontalDivs d-lg-flex flex-md-row-reverse">
+          <div class="">
+            <img
+              src="./assets/profile_pic.png"
+              alt="Girl in a jacket"
+              width="235"
+              height="240"
+              style="
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: top;
+                border: 1px solid #bbe0eb;
+                padding: 3px;
+              "
+            />
+          </div>
+          <div class="">
+            <h1 class="text_light main_heading font_standard">
+              Hello World, I'm<br />
+              Muhammad Ahmad
+            </h1>
+          </div>
+        </div>
+        <div class="horizontalDivs">
+          <h1
+            class="text_light primary_heading font_standard"
+            style="font-weight: 100; font-size: 20px"
+          ></h1>
+          <p
+            class="text_light primary_heading font_standard about_content"
+            style="font-weight: 100; font-size: 20px"
+          >
+            An enthusiastic front-end developer with a passion for merging
+            functionality and making innovative designs. <br />
+            With over three years of hands-on experience in the software
+            industry, I've honed my skills through various projects and
+            collaborations. I've contributed to the development of diverse
+            applications, each tailored to meet specific client needs and
+            industry standards.
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="width: 80%; margin-top: 60px !important; z-index: 100"
+        class="m-auto row d-flex flex-wrap"
+      >
+        <h1
+          class="text_light main_heading font_standard"
+          style="margin-bottom: 20px; text-align: center"
+        >
+          My Skills
+        </h1>
+        <div class="my-2 col-12 col-sm-4 col-md-3 col-lg-2 all mobile">
+          <div class="tech-image-wrapper img_wrapper">
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/js.svg"
+              alt="javaScript"
+              decoding="async"
+            />
+            <p class="text_light font_standard m-0">JavsScript</p>
+          </div>
+        </div>
+        <div class="my-2 col-12 col-sm-4 col-md-3 col-lg-2 all front_tech">
+          <div class="tech-image-wrapper img_wrapper">
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/bootstrap-logo-shadow.png"
+              alt="bootstrap"
+              decoding="async"
+            />
+            <p class="text_light font_standard m-0">Bootstrap</p>
+          </div>
+        </div>
+
+        <div class="my-2 col-12 col-sm-4 col-md-3 col-lg-2 all front_tech">
+          <div class="tech-image-wrapper img_wrapper">
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/html-5.png"
+              alt="html5"
+              decoding="async"
+            />
+            <p class="text_light font_standard m-0">HTML5</p>
+          </div>
+        </div>
+
+        <div class="my-2 col-12 col-sm-4 col-md-3 col-lg-2 all front_tech">
+          <div class="tech-image-wrapper img_wrapper">
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/css-3.png"
+              alt="css3"
+              decoding="async"
+            />
+            <p class="text_light font_standard m-0">CSS3</p>
+          </div>
+        </div>
+
+        <div class="my-2 col-12 col-sm-4 col-md-3 col-lg-2 all web">
+          <div class="tech-image-wrapper img_wrapper">
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/react.png"
+              alt="reactjs"
+              decoding="async"
+            />
+            <p class="text_light font_standard m-0">React JS</p>
+          </div>
+        </div>
+
+        <div class="my-2 col-12 col-sm-4 col-md-3 col-lg-2 all web">
+          <div class="tech-image-wrapper img_wrapper">
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/redux.svg"
+              alt="redux"
+              decoding="async"
+            />
+            <p class="text_light font_standard m-0">Redux</p>
+          </div>
+        </div>
+
+        <div class="my-2 col-12 col-sm-4 col-md-3 col-lg-2 all web">
+          <div class="tech-image-wrapper img_wrapper">
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/TailwindCSS.png"
+              alt="tailwindcss"
+              decoding="async"
+            />
+            <p class="text_light font_standard m-0">Tailwind CSS</p>
+          </div>
+        </div>
+
+        <div class="my-2 col-12 col-sm-4 col-md-3 col-lg-2 all web">
+          <div class="tech-image-wrapper img_wrapper">
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/MaterialUI.png"
+              alt="materialui"
+              decoding="async"
+            />
+            <p class="text_light font_standard m-0">Material UI</p>
+          </div>
+        </div>
+
+        <div class="my-2 col-12 col-sm-4 col-md-3 col-lg-2 all web">
+          <div class="tech-image-wrapper img_wrapper">
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/GitHub.png"
+              alt="github"
+              decoding="async"
+            />
+            <p class="text_light font_standard m-0">Github</p>
+          </div>
+        </div>
+      </div>
+      <div
+        style="width: 80%; margin-top: 60px !important; z-index: 100"
+        class="m-auto"
+      >
+        <h1
+          class="text_light main_heading font_standard"
+          style="margin-bottom: 20px; text-align: center"
+        >
+          Experience
+        </h1>
+        <div
+          style="
+            padding: 15px 30px;
+            background-color: #bbe0eb0d;
+            -webkit-box-shadow: 0px 3px 7px #0000000d;
+            margin-bottom: 20px;
+          "
+        >
+          <p class="text_light font_standard primary_heading m-0">
+            React js Developer @ Devflovv
+          </p>
+          <p class="text_light font_standard" style="font-size: 12px">
+            Oct 2022 - Sep 2024
+          </p>
+          <p class="text_light font_standard">
+            As a web developer, I've had the privilege of contributing to
+            numerous projects, often collaborating as a team member and
+            occasionally leading initiatives. In React, I confidently tackle
+            challenging tasks with ease and enthusiasm.
+          </p>
+          <p class="text_light font_standard m-0">Responsibilities:</p>
+          <p class="text_light font_standard">
+            UI Implementaion
+            <span style="color: yellow; font-size: 20px">|</span> Functionality
+            <span style="color: yellow; font-size: 20px">|</span> Responsive
+            design <span style="color: yellow; font-size: 20px">|</span> API
+            integration
+            <span style="color: yellow; font-size: 20px">|</span> State
+            Management > Redux
+          </p>
+        </div>
+
+        <div
+          style="
+            padding: 15px 30px;
+            background-color: #bbe0eb0d;
+            -webkit-box-shadow: 0px 3px 7px #0000000d;
+            margin-bottom: 20px;
+          "
+        >
+          <p class="text_light font_standard primary_heading m-0">
+            Frontend Developer @ AlphaSquad
+          </p>
+          <p class="text_light font_standard" style="font-size: 12px">
+            Nov 2021 - oct 2022
+          </p>
+          <p class="text_light font_standard">
+            Developed and implemented responsive Admin Portals using React,
+            integrating third-party libraries, REST APIs, and Firebase for
+            seamless functionality. Utilized Redux for state management to
+            ensure efficient data flow and enhanced user experience.
+          </p>
+          <p class="text_light font_standard m-0">Responsibilities:</p>
+          <p class="text_light font_standard">
+            Develop Admin Portals using React Technology
+            <span style="color: yellow; font-size: 20px">|</span> Functionality
+            <span style="color: yellow; font-size: 20px">|</span> UI design
+            Implementaion
+            <span style="color: yellow; font-size: 20px">|</span> API
+            integration
+            <span style="color: yellow; font-size: 20px">|</span> State
+            Management > Redux
+            <span style="color: yellow; font-size: 20px">|</span>
+            Third-Party Libraries integration
+            <span style="color: yellow; font-size: 20px">|</span>
+            Firebase Integration
+          </p>
+        </div>
+
+        <div
+          style="
+            padding: 15px 30px;
+            background-color: #bbe0eb0d;
+            -webkit-box-shadow: 0px 3px 7px #0000000d;
+          "
+        >
+          <p class="text_light font_standard primary_heading m-0">
+            React js Developer @ BlueHorn
+          </p>
+          <p class="text_light font_standard" style="font-size: 12px">
+            Jun 2021 - Nov 2021
+          </p>
+          <p class="text_light font_standard">
+            As a web developer, I've contributed to diverse projects,
+            collaborating with teams and leading initiatives, while tackling
+            React challenges with confidence.
+          </p>
+          <p class="text_light font_standard m-0">Responsibilities:</p>
+          <p class="text_light font_standard">
+            UI Implementaion
+            <span style="color: yellow; font-size: 20px">|</span> Functionality
+            <span style="color: yellow; font-size: 20px">|</span> Responsive
+            design <span style="color: yellow; font-size: 20px">|</span> API
+            integration
+            <span style="color: yellow; font-size: 20px">|</span> State
+            Management > Redux
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="width: 80%; margin-top: 60px !important; z-index: 100"
+        class="m-auto"
+      >
+        <h1
+          class="text_light main_heading font_standard"
+          style="margin-bottom: 20px; text-align: center"
+        >
+          Projects
+        </h1>
+      </div>
+
+      <div
+        style="width: 80%; margin-top: 60px !important; z-index: 100"
+        class="m-auto"
+      >
+        <h1
+          class="text_light main_heading font_standard"
+          style="margin-bottom: 20px; text-align: center"
+        >
+          Contact me
+        </h1>
+        <!-- //////////////// -->
+        <div
+          style="width: 80%; margin-top: 60px !important; z-index: 100"
+          class="m-auto row d-flex flex-wrap"
+        >
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              background-color: white;
+              border-radius: 50%;
+            "
+          >
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/icon-linkedin.png"
+              alt="github"
+              decoding="async"
+            />
+          </div>
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              background-color: white;
+              border-radius: 50%;
+            "
+          >
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/icon-email.png"
+              alt="github"
+              decoding="async"
+            />
+          </div>
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              background-color: white;
+              border-radius: 50%;
+            "
+          >
+            <img
+              loading="lazy"
+              class="image-fluid"
+              src="./assets/icon-github.png"
+              alt="github"
+              decoding="async"
+            />
+          </div>
+        </div>
+        <!-- //////// -->
+      </div>
+    </div>
+
+    <script src="canvas.js"></script>
+  </body>
 </html>
