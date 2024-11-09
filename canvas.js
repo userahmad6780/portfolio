@@ -1,3 +1,5 @@
+console.log(window.screen.height)
+
 function randomInRange(min, max) {
   return min + (max - min) * Math.random();
 }
@@ -145,6 +147,7 @@ var LinkedParticles = function (ctx) {
       that.ctx.fill();
       that.ctx.closePath();
     }
+
   };
 
   that.forcePoint = function () {
@@ -171,7 +174,12 @@ var LinkedParticles = function (ctx) {
     that.ctx.canvas.width = window.innerWidth;
 
     // Dynamically set the height of the canvas to match the document body height
-    that.ctx.canvas.height = document.body.scrollHeight;
+    var body = document.body,
+    html = document.documentElement;
+
+    var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+    that.ctx.canvas.height = height + 50;
   };
 
   window.addEventListener("resize", that.onresize, false);
@@ -237,4 +245,5 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // start animation
   requestAnimationFrame(loop);
+
 });
